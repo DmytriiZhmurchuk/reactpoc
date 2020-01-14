@@ -2,8 +2,9 @@ import 'gridSystems/gridVersion2/grid.less';
 import 'utils/normalize.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App.js'
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  App(),
   document.getElementById('root')
 );

@@ -4,6 +4,7 @@
 .make-container() {
     margin-right: auto;
     margin-left: auto;
+    max-width: 100%;
     //phone max 767
     @media (max-width: @screen-xs-max-ex) {
         padding-left: @container-xs-margin-ex;
@@ -77,6 +78,10 @@
 }
 
 .container {
+    box-sizing: border-box;
+    & * {
+        box-sizing: border-box;
+    }
     .make-container();
     width: 100%;
     max-width: @screen-lg-max-ex;

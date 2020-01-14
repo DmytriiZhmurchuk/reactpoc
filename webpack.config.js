@@ -68,7 +68,11 @@
     resolve: {
       alias: {
         gridSystems: path.resolve(__dirname, 'src/styles/gridSystems'),
-        utils: path.resolve(__dirname, 'src/styles/utils')
+        utils: path.resolve(__dirname, 'src/styles/utils'),
+        atoms: path.resolve(__dirname, 'src/atoms'),
+        atomsStyles: path.resolve(__dirname, 'src/styles/atoms'),
+        moleculesStyles: path.resolve(__dirname, 'src/styles/molecules'),
+        molecules: path.resolve(__dirname, 'src/molecules')
       }
     }
   };
