@@ -1,1 +1,103 @@
-@import "utils/grid-column-generator"
+@import "../../utils/grid-column-generator.less";
+@import "../../settings/gridVersion2Settings.less";
+
+.make-container() {
+    margin-right: auto;
+    margin-left: auto;
+    //phone max 767
+    @media (max-width: @screen-xs-max-ex) {
+        padding-left: @container-xs-margin-ex;
+        padding-right: @container-xs-margin-ex;
+    }
+    //tablet portarit min 768 max p79
+    @media (min-width: @screen-sm-min-ex) and (max-width: @screen-sm-max-ex) {
+        padding-left: @container-sm-margin-ex;
+        padding-right: @container-sm-margin-ex;
+    }
+    //tablet landscape min 980 max 1299
+    @media (min-width: @screen-md-min-ex) and (max-width: @screen-md-max-ex) {
+        padding-left: @container-md-margin-ex;
+        padding-right: @container-md-margin-ex;
+    }
+
+    @media (min-width: @screen-lg-min-ex) and (max-width: @screen-lg-max-ex) {
+        padding-left: @container-lg-margin-ex;
+        padding-right: @container-lg-margin-ex;
+    }
+
+    @media (min-width: @screen-xlg-min-ex) {
+        padding-left: @container-xlg-margin-ex;
+        padding-right: @container-xlg-margin-ex;
+    }
+    .clearfix();
+}
+
+.make-row() {
+
+    @media (max-width: @screen-xs-max-ex) {
+        @gutter: @grid-gutter-xs-width-ex;
+        @left: floor((@gutter / -2));
+        @right: ceil((@gutter / -2));
+        margin-left: @left;
+        margin-right: @right;
+    }
+
+    @media (min-width: @screen-sm-min-ex) and (max-width: @screen-sm-max-ex) {
+        @gutter: @grid-gutter-sm-width-ex;
+        @left: ceil((@gutter / -2));
+        @right: floor((@gutter / -2));
+        margin-left: @left;
+        margin-right: @right;
+    }
+
+    @media (min-width: @screen-md-min-ex) and (max-width: @screen-md-max-ex) {
+        @gutter: @grid-gutter-md-width-ex;
+        @left: ceil((@gutter / -2));
+        @right: floor((@gutter / -2));
+        margin-left: @left;
+        margin-right: @right;
+    }
+
+    @media (min-width: @screen-lg-min-ex) and (max-width: @screen-lg-max-ex) {
+        @gutter: @grid-gutter-lg-width-ex;
+        @left: ceil((@gutter / -2));
+        @right: floor((@gutter / -2));
+        margin-left: @left;
+        margin-right: @right;
+    }
+
+    @media (min-width: @screen-xlg-min-ex) {
+        @gutter: @grid-gutter-xlg-width-ex;
+        @left: ceil((@gutter / -2));
+        @right: floor((@gutter / -2));
+        margin-left: @left;
+        margin-right: @right;
+    }
+    .clearfix();
+}
+
+.container {
+    .make-container();
+    width: 100%;
+    max-width: @screen-lg-max-ex;
+    .row {
+    	.make-row();
+    }
+}
+.make-grid(xs);
+
+@media (min-width: @screen-sm-min-ex) and (max-width: @screen-sm-max-ex) {
+    .make-grid(sm);
+}
+
+@media (min-width: @screen-md-min-ex) and (max-width: @screen-md-max-ex) {
+    .make-grid(md);
+}
+
+@media (min-width: @screen-lg-min-ex) and (max-width: @screen-lg-max-ex) {
+    .make-grid(lg);
+}
+
+@media (min-width: @screen-xlg-min-ex) {
+    .make-grid(xlg);
+}

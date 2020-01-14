@@ -1,6 +1,7 @@
   const path = require('path');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
   const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+  const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
   module.exports = {
     mode: 'development',
@@ -13,6 +14,9 @@
       hot: true
     },
     plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'base-all.css',
+      }),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         title: 'Development',
@@ -37,20 +41,34 @@
           test: /\.css$/i,
           use: ['style-loader', 'css-loader']
         },
+        // {
+        //   test: /\.less$/,
+        //   use: [
+        //     {
+        //       loader: 'style-loader', // creates style nodes from JS strings
+        //     },
+        //     {
+        //       loader: 'css-loader', // translates CSS into CommonJS
+        //     },
+        //     {
+        //       loader: 'less-loader', // compiles Less to CSS
+        //     }
+        //   ],
+        // },
         {
           test: /\.less$/,
           use: [
-          {
-            loader: 'style-loader', // creates style nodes from JS strings
-          },
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-          },
-          {
-            loader: 'less-loader', // compiles Less to CSS
-          }
-        ],
-      },
+              MiniCssExtractPlugin.loader,
+              "css-loader",
+              "less-loader"
+          ],
+        }
       ]
+    },
+    resolve: {
+      alias: {
+        gridSystems: path.resolve(__dirname, 'src/styles/gridSystems'),
+        utils: path.resolve(__dirname, 'src/styles/utils')
+      }
     }
   };
