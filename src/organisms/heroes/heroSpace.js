@@ -1,6 +1,7 @@
 import React from 'react';
 import BodyCopy from 'atoms/bodyCopy/bodyCopy';
 import Button from 'atoms/button/button';
+import StyledButton from 'atoms/button/styled-button';
 import Headline from 'atoms/headline/headline';
 import ContentHorizontal from 'molecules/contentHorizontal/contentHorizontal';
 
@@ -19,8 +20,10 @@ export default class HeroSpace extends React.Component {
                <Headline text={componentData.headline}></Headline>
 			         <ContentHorizontal>
                   <BodyCopy text={componentData.paragraph}></BodyCopy>
-                  <Button text={componentData.buttonText} buttonType="primary"></Button>
+                  <Button text={componentData.buttonText} buttonType="primary">rrr</Button>
+                  <StyledButton primary={true}>text</StyledButton>
                </ContentHorizontal> 
+               
 			      </div>
 			    </div>
 		    </div>
