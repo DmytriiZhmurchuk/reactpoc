@@ -21,7 +21,7 @@ export default class HeroSpace extends React.Component {
 			         <ContentHorizontal>
                   <BodyCopy text={componentData.paragraph}></BodyCopy>
                   <Button text={componentData.buttonText} buttonType="primary">rrr</Button>
-                  <StyledButton primary={true}>text</StyledButton>
+                  <StyledButton primary={true}></StyledButton>
                </ContentHorizontal> 
                
 			      </div>
