@@ -24,6 +24,12 @@
         filename: 'index.html'
       }),
     ],
+    optimization: {
+      splitChunks: {
+        // include all types of chunks
+        chunks: 'all'
+      }
+    },
     output: {
       filename: '[name].bundle.[hash].js',
       path: path.resolve(__dirname, 'dist'),
@@ -72,7 +78,8 @@
         atoms: path.resolve(__dirname, 'src/atoms'),
         atomsStyles: path.resolve(__dirname, 'src/styles/atoms'),
         moleculesStyles: path.resolve(__dirname, 'src/styles/molecules'),
-        molecules: path.resolve(__dirname, 'src/molecules')
+        molecules: path.resolve(__dirname, 'src/molecules'),
+        lazyLoadComponents:  path.resolve(__dirname, 'src/lazyLoadComponents')
       }
     }
   };

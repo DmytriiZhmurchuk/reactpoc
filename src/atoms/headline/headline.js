@@ -1,5 +1,5 @@
 import React from 'react';
-
+import 'atomsStyles/headline.less';
 export default class Headline extends React.Component {
   render() {
     return (
