@@ -8,14 +8,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "webpack-dev-server --open",
     "build": "webpack",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook -p 4855"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>[/\\\\](build|docs|node_modules|scripts)[/\\\\]"
